@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Inter:wght@400;600;700&family=Noto+Sans+Tamil:wght@400;600;700&display=swap');
+@import "tailwindcss";
+@source "../src";
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: oklch(0.985 0.006 240);
+  --foreground: oklch(0.28 0.09 262);
+  --card: oklch(0.995 0.003 90);
+  --card-foreground: oklch(0.28 0.09 262);
+  --popover: oklch(0.995 0.003 90);
+  --popover-foreground: oklch(0.28 0.09 262);
+  --primary: oklch(0.38 0.14 262);
+  --primary-foreground: oklch(0.98 0.005 90);
+  --secondary: oklch(0.92 0.02 250);
+  --secondary-foreground: oklch(0.32 0.1 262);
+  --muted: oklch(0.93 0.012 250);
+  --muted-foreground: oklch(0.48 0.05 260);
+  --accent: oklch(0.9 0.035 250);
+  --accent-foreground: oklch(0.3 0.1 262);
+  --destructive: oklch(0.53 0.2 27);
+  --destructive-foreground: oklch(0.98 0.005 90);
+  --border: oklch(0.55 0.12 262);
+  --input: oklch(0.7 0.06 262);
+  --ring: oklch(0.45 0.13 262);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --ink: oklch(0.33 0.13 262);
+  --paper: oklch(1 0 0);
+  --rule: oklch(0.45 0.13 262);
+}
+
+.dark {
+  --background: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.984 0.003 247.858);
+  --card: oklch(0.208 0.042 265.755);
+  --card-foreground: oklch(0.984 0.003 247.858);
+  --popover: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.929 0.013 255.508);
+  --primary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --muted: oklch(0.279 0.041 260.031);
+  --muted-foreground: oklch(0.704 0.04 256.788);
+  --accent: oklch(0.279 0.041 260.031);
+  --accent-foreground: oklch(0.984 0.003 247.858);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.279 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+/* ---- Official A4 deposit & share form sheet ---- */
+@layer components {
+  .a4-sheet-container {
+    width: 100%;
+    max-width: 210mm;
+    margin: 0 auto;
+    background: #ffffff;
+    box-sizing: border-box;
+  }
+
+  .sheet {
+    background: var(--paper);
+    color: var(--ink);
+    border: 2px solid var(--rule);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11.5px;
+    line-height: 1.35;
+    box-sizing: border-box;
+  }
+
+  .sheet .cell {
+    border: 1px solid var(--rule);
+  }
+
+  .sheet .band {
+    border: 1px solid var(--rule);
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 3px 0;
+  }
+
+  .sheet label {
+    font-weight: 700;
+  }
+
+  .fld {
+    width: 100%;
+    max-width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px dotted var(--rule);
+    outline: none;
+    color: var(--ink);
+    font: inherit;
+    padding: 1px 2px;
+    min-height: 20px;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    box-sizing: border-box;
+  }
+
+  .fld-multiline {
+    width: 100% !important;
+    display: block !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+    white-space: pre-wrap !important;
+    line-height: 18px !important;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 17px,
+      var(--rule) 17px,
+      var(--rule) 18px
+    ) !important;
+    background-size: 100% 18px !important;
+    border-bottom: none !important;
+    min-height: 18px !important;
+    padding: 0 2px !important;
+  }
+
+  .fld:focus {
+    border-bottom-style: solid;
+    background: color-mix(in oklch, var(--accent) 45%, transparent);
+  }
+
+  .fld::placeholder {
+    color: color-mix(in oklch, var(--ink) 35%, transparent);
+  }
+
+  .tick {
+    width: 13px;
+    height: 13px;
+    border: 1px solid var(--rule, #1e3a8a);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    background: transparent;
+    cursor: pointer;
+    line-height: 1;
+    font-size: 11px;
+    font-weight: bold;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+/* ---- A4 Multi-Page & Single-Page Print Optimization ---- */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 3.5mm 4.5mm;
+  }
+  html, body, #root, main, .print-wrap {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Force 100% scale for printing across all browsers and mobile PDF print drivers */
+  *,
+  .no-print-transform,
+  .a4-paper-viewer-frame,
+  div[style*="fit-content"],
+  [style*="zoom"],
+  [style*="transform"] {
+    zoom: 1 !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+  }
+
+  .no-print, nav, header, button, .no-print-area {
+    display: none !important;
+  }
+
+  .cert-print-card {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: #ffffff !important;
+  }
+
+  .cert-print-iframe {
+    width: 100% !important;
+    height: 295mm !important;
+    max-height: 295mm !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .print-wrap {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  .print-page-break {
+    break-after: page !important;
+    page-break-after: always !important;
+  }
+
+  /* Document sheet display for print - 100% full width, centered */
+  .preview-column,
+  .a4-sheet-container {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .sheet {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    box-sizing: border-box !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    border-width: 1.5px !important;
+    font-size: 9.3px !important;
+    line-height: 1.22 !important;
+    padding: 4px 6px !important;
+    max-height: 284mm !important;
+  }
+
+  .sheet .cell {
+    padding: 1px 2.5px !important;
+  }
+
+  .sheet .band {
+    padding: 1px 0 !important;
+    font-size: 9.3px !important;
+  }
+
+  .fld {
+    border-bottom-color: #333333 !important;
+    min-height: 14px !important;
+    padding: 0 2px !important;
+  }
+}
+
+/* ---- Mobile & Responsive Screen Adaptive Utilities ---- */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="number"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
